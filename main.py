@@ -10,7 +10,7 @@ import random
 from offsets import letters
 # x = letters.items()
 
-num_img = 1
+num_img = 20
 
 x = lambda t : str(random.randint(1,9)) 
 
@@ -18,7 +18,7 @@ for n in range(num_img):
 
     counter=0
     for k,v in letters.items():
-        print(k,v)
+        # print(k,v)
         # Open an image file
         template_path = './templates/savari.png'
         # font_path = './fonts/khorshid.ttf'
