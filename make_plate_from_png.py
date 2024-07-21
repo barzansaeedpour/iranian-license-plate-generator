@@ -9,84 +9,84 @@ import random
 
 # List of items to choose from
 numbers = [
-          {"ch":'1',
-           "position":[100, 30],
-           "size":[40, 115],
-           },
-          {"ch":'2',
-           "position":[100, 30],
-           "size":[60, 115],
-           },
-          {"ch":'3',
-           "position":[100, 30],
-           "size":[60, 115],
-           },
-          {"ch":'4',
-           "position":[100, 30],
-           "size":[60, 115],
-           },
+        #   {"ch":'1',
+        #    "position":[100, 30],
+        #    "size":[40, 115],
+        #    },
+        #   {"ch":'2',
+        #    "position":[100, 30],
+        #    "size":[60, 115],
+        #    },
+        #   {"ch":'3',
+        #    "position":[100, 30],
+        #    "size":[60, 115],
+        #    },
+        #   {"ch":'4',
+        #    "position":[100, 30],
+        #    "size":[60, 115],
+        #    },
           {"ch":'5',
            "position":[100, 30],
            "size":[60, 115],
            },
-          {"ch":'6',
-           "position":[100, 30],
-           "size":[60, 115],
-           },
-          {"ch":'7',
-           "position":[100, 30],
-           "size":[60, 115],
-           },
-          {"ch":'8',
-           "position":[100, 30],
-           "size":[60, 115],
-           },
-          {"ch":'9',
-           "position":[100, 30],
-           "size":[60, 115],
-           },
+        #   {"ch":'6',
+        #    "position":[100, 30],
+        #    "size":[60, 115],
+        #    },
+        #   {"ch":'7',
+        #    "position":[100, 30],
+        #    "size":[60, 115],
+        #    },
+        #   {"ch":'8',
+        #    "position":[100, 30],
+        #    "size":[60, 115],
+        #    },
+        #   {"ch":'9',
+        #    "position":[100, 30],
+        #    "size":[60, 115],
+        #    },
         ]
 mini_numbers = [
-          {"ch":'0',
-           "position":[100, 90],
-           "size":(40, 40),
-           },
-          {"ch":'1',
-           "position":[100, 50],
-           "size":(40, 100),
-           },
-          {"ch":'2',
-           "position":[100, 50],
-           "size":(57, 100),
-           },
-          {"ch":'3',
-           "position":[100, 50],
-           "size":(57, 100),
-           },
-          {"ch":'4',
-           "position":[100, 50],
-           "size":(57, 100),
-           },
+        #   {"ch":'0',
+        #    "position":[100, 90],
+        #    "size":(40, 40),
+        #    },
+        #   {"ch":'1',
+        #    "position":[100, 50],
+        #    "size":(40, 100),
+        #    },
+        #   {"ch":'2',
+        #    "position":[100, 50],
+        #    "size":(57, 100),
+        #    },
+        #   {"ch":'3',
+        #    "position":[100, 50],
+        #    "size":(57, 100),
+        #    },
+        #   {"ch":'4',
+        #    "position":[100, 50],
+        #    "size":(57, 100),
+        #    },
           {"ch":'5',
            "position":[100, 50],
            "size":(57, 100),
            },
-          {"ch":'6',
-           "position":[100, 50],
-           "size":(57, 100),
-           },
-          {"ch":'7',
-           "position":[100, 50],
-           "size":(57, 100),
-           },
-          {"ch":'8',
-           "position":[100, 50],
-           "size":(57, 100),
-           },
-          {"ch":'9',
-           "position":[100, 50],
-           "size":(57, 100),
-           },
+        #   {"ch":'6',
+        #    "position":[100, 50],
+        #    "size":(57, 100),
+        #    },
+        #   {"ch":'7',
+        #    "position":[100, 50],
+        #    "size":(57, 100),
+        #    },
+        #   {"ch":'8',
+        #    "position":[100, 50],
+        #    "size":(57, 100),
+        #    },
+        #   {"ch":'9',
+        #    "position":[100, 50],
+        #    "size":(57, 100),
+        #    },
         ]
 
 chars = [ 
@@ -99,18 +99,42 @@ chars = [
         #    "size":(80, 80),
         #    },
         #  {"ch":'D',
-        #    "position":(275, 50),
-        #    "size":(80, 80),
+        #    "position":(270, 40),
+        #    "size":(90, 90),
         #    },
         #  {"ch":'Q',
         #    "position":(265, 40),
         #    "size":(100, 100),
         #    },
-         {"ch":'HE',
-           "position":(265, 40),
-           "size":(100, 100),
+        #  {"ch":'J',
+        #    "position":(265, 40),
+        #    "size":(100, 100),
+        #    },
+        #  {"ch":'SIN',
+        #    "position":(265, 55),
+        #    "size":(100, 80),
+        #    },
+        #  {"ch":'SAD',
+        #    "position":(265, 55),
+        #    "size":(100, 80),
+        #    },
+        #  {"ch":'TA',
+        #    "position":(270, 30),
+        #    "size":(90, 110),
+        #    },
+        #  {"ch":'V',
+        #    "position":(280, 40),
+        #    "size":(70, 100),
+        #    },
+        #  {"ch":'M',
+        #    "position":(280, 40),
+        #    "size":(70, 100),
+        #    },
+         {"ch":'M',
+           "position":(280, 40),
+           "size":(70, 100),
            },
-        #  'HE', 'J', 'L', 'M', 'SAD', 'SIN', 'TA', 'V', 'Y'
+        #  'HE', 'L',  'V', 'Y'
          ]
 
 # Make a random choice from the list
@@ -141,9 +165,6 @@ overlay2 = remove_background(Image.open(f"./chars/{random_2['ch']}.png"))
 overlay2 = overlay2.resize(random_2['size']) 
 background.paste(overlay2, [180, random_2['position'][1]])
 
-# position = (160, 30)  # Specify the coordinates (x, y)
-# overlay5 = overlay5.resize((60, 115)) 
-# background.paste(overlay5, position)
 
 position = random_char['position']  # Specify the coordinates (x, y)
 overlaych = overlaych.resize(random_char['size']) 
@@ -168,21 +189,6 @@ background.paste(overlay6, [655, mini_random_1['position'][1]])
 overlay7 = remove_background(Image.open(f"./chars/{mini_random_2['ch']}.png"))
 overlay7 = overlay7.resize(mini_random_2['size']) 
 background.paste(overlay7, [720, mini_random_2['position'][1]])
-
-
-# position = (550, 30)  # Specify the coordinates (x, y)
-# overlay1 = overlay1.resize((40, 115)) 
-# background.paste(overlay5, position)
-
-# position = (662, 50)  # 4
-# overlay2 = overlay2.resize() # 4
-# # overlay1 = overlay1.resize((57, 100)) # 4
-# background.paste(overlay5, position)
-
-
-# position = (730, 90)  # Specify the coordinates (x, y)
-# overlay0 = overlay0.resize((40, 40)) 
-# background.paste(overlay5, position)
 
 
 # Save the final image with the overlay
