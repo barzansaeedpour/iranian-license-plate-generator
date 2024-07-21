@@ -10,7 +10,7 @@ import random
 from offsets import letters
 # x = letters.items()
 
-num_img = 20
+num_img = 1
 
 x = lambda t : str(random.randint(1,9)) 
 
@@ -20,7 +20,7 @@ for n in range(num_img):
     for k,v in letters.items():
         # print(k,v)
         # Open an image file
-        template_path = './templates/savari.png'
+        template_path = './templates/savari2.png'
         # font_path = './fonts/khorshid.ttf'
         font_path = './fonts/BZarBd.ttf'
 
@@ -30,16 +30,17 @@ for n in range(num_img):
         draw = ImageDraw.Draw(image)
 
         plate_text=[x(0),x(0),k,x(0),x(0),x(0),x(0),x(0)]
+        # plate_text=['5','5',k,'5','5','5','5','5']
 
         positions = [
-            [80, 35],
-            [150,35],
-            v,
-            [380,35],
-            [460,35],
-            [540,35],
-            [640,35],
-            [712,35],
+            [90, 38],
+            [165,38],
+            [v[0], v[1]],
+            [380,38],
+            [460,38],
+            [540,38],
+            [665,65],
+            [725,65],
             ]
 
         for i in range(len(plate_text)):
@@ -48,7 +49,12 @@ for n in range(num_img):
             text = plate_text[i]
             # Load a custom font
             if i==2:
-                font = ImageFont.truetype(font_path, size=118)
+                if k=='ه':
+                    font = ImageFont.truetype('arial', size=v[2])
+                else:
+                    font = ImageFont.truetype(font_path, size=v[2])
+            elif i>=6:
+                font = ImageFont.truetype(font_path, size=112)
             else:
                 font = ImageFont.truetype(font_path, size=140)
             # Specify the position to add the text
