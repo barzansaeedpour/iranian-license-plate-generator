@@ -1,12 +1,30 @@
 
+from typing import List, Tuple
+
 from PIL import Image
 
+savari_background_path = "templates/savari.png"
+police_background_path = "templates/police.png"
+taxi_background_path = "templates/taxi.png"
 
-def remove_background(image,char_color):
-    # Load the image
-    # image = Image.open('chars/4.png')
+def get_background(char: str) -> Tuple[Image.Image, str]:
+	char_color = 'black'
+	if char['ch']=='T':
+		background = Image.open(taxi_background_path)
+	elif char['ch']=='P':
+		background = Image.open(police_background_path)
+		char_color = 'white'
+	else:
+		background = Image.open(savari_background_path)
 
-    # Create a copy of the image with an alpha channel
+	return background, char_color
+
+def create_overlay(image_path: str, char_color: str, size: Tuple[int, int], position: Tuple[int, int], new_image: Image.Image) -> Image.Image:
+    overlay = remove_background(Image.open(image_path), char_color=char_color)
+    overlay = overlay.resize(size)
+    new_image.paste(overlay, position)
+    return new_image
+def remove_background(image: Image.Image, char_color: str) -> Image.Image:
     image = image.convert("RGBA")
     data = image.getdata()
 
@@ -21,13 +39,9 @@ def remove_background(image,char_color):
                 new_data.append((0, 0, 0, 255))
             else:
                 new_data.append((255, 255, 255, 255))
-            # new_data.append(item)
 
     # Update the image data
     image.putdata(new_data)
-
-    # Save the image with transparent background
-    # image.save("EIN_T.png")
     return image
 
 # def remove_background2():
