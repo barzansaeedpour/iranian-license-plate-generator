@@ -9,6 +9,7 @@ Use this repository to generate Iranina car license plates.
 
 samples of generated images
 
+نمونه پلاک های تولید شده
 
 <html>
 <body>
