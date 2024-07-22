@@ -1,8 +1,8 @@
 # Iranina-license-plate-generator
 
-Use this repository to generate Iranina car license plates.
+You can use this project to produce quality Iranian license plates.
 
-از این پروژه برای تولید پلاک های ایرانی می توانید استفاده کنید.
+از این پروژه برای تولید پلاک های ایرانی با کیفیت می توانید استفاده کنید.
 
 ## Samples
 
