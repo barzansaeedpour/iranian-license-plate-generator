@@ -87,6 +87,10 @@ mini_numbers = [
         ]
 
 chars = [ 
+          {"ch":'EIN',
+           "position":(260, 30),
+           "size":(110, 110),
+           },
         #  {"ch":'B',
         #    "position":(260, 50),
         #    "size":(110, 90),
