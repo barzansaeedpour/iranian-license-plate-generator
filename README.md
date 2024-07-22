@@ -27,5 +27,9 @@ samples of generated images
 
 ## How to use
 
-- ```pip install -r requirements ```
-- ```python main.py ```
+- ```
+    pip install -r requirements
+    ```
+- ```
+    python main.py 
+    ```
