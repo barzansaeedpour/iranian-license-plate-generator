@@ -29,7 +29,7 @@ samples of generated images
 ## How to use
 
 - ```
-    pip install -r requirements
+    pip install -r requirements.txt
     ```
 - ```
     python main.py 
