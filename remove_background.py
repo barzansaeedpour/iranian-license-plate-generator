@@ -2,7 +2,7 @@
 from PIL import Image
 
 
-def remove_background(image):
+def remove_background(image,char_color):
     # Load the image
     # image = Image.open('chars/4.png')
 
@@ -15,16 +15,19 @@ def remove_background(image):
     new_data = []
     for item in data:
         if item[0] > threshold and item[1] > threshold and item[2] > threshold:
-            new_data.append((255, 255, 255, 255))
+            new_data.append((255, 255, 255, 0))
         else:
-            new_data.append((0, 0, 0, 255))
+            if char_color == 'black':
+                new_data.append((0, 0, 0, 255))
+            else:
+                new_data.append((255, 255, 255, 255))
             # new_data.append(item)
 
     # Update the image data
     image.putdata(new_data)
 
     # Save the image with transparent background
-    image.save("EIN_T.png")
+    # image.save("EIN_T.png")
     return image
 
 # def remove_background2():
