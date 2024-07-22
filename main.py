@@ -1,8 +1,10 @@
 from PIL import Image
 from remove_background import remove_background
 # from remove_background import remove_background_HE
-
+import os
 import random
+
+os.makedirs('./output/',exist_ok=True)
 
 # List of items to choose from
 numbers = [
