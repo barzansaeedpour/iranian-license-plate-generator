@@ -32,5 +32,9 @@ samples of generated images
     pip install -r requirements.txt
     ```
 - ```
-    python main.py 
+    python main.py [options]
     ```
+- -o <output_dir>: Specify the output directory. Default is ./output/.
+- -n <number>: Specify the number of iterations. Default is 100.
+
+Note: Both -o and -n are optional. If not specified, the defaults are ./output/ for -o and 100 for -n.
