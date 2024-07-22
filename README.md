@@ -1,5 +1,8 @@
 # Iranina-license-plate-generator
 
+Use this repository to generate Iranina car license plates.
+
+از این پروژه برای تولید پلاک های ایرانی می توانید استفاده کنید.
 
 ## Samples
 
@@ -21,3 +24,8 @@ samples of generated images
     </table>
 </body>
 </html>
+
+## How to use
+
+- ```pip install -r requirements ```
+- ```python main.py ```
