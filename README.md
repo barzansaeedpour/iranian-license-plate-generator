@@ -34,3 +34,12 @@ samples of generated images
 - ```
     python main.py 
     ```
+
+## Chars and Numbers
+
+| Persian | English | Image |
+|----------|----------|----------|
+| ب | B | <img src="./resized_chars/B.png" width="100%" height="100%" style="background-color: white;"> |
+| د | D | <img src="./resized_chars/D.png" width="100%" height="100%" style="background-color: white;"> |
+| ن | N | <img src="./resized_chars/N.png" width="100%" height="100%" style="background-color: white;"> |
+| پ | P | <img src="./resized_chars/P.png" width="100%" height="100%" style="background-color: white;"> |
