@@ -161,7 +161,7 @@ chars = [
     ]
 
 
-for i in range(100):
+for i in range(200):
     # Open the background image
 
     # Make a random choice from the list
@@ -179,15 +179,15 @@ for i in range(100):
         mini_random_1 = random.choice(mini_numbers)
     mini_random_2 = random.choice(mini_numbers)
 
-    plate_text =  random_1['ch'] + random_2['ch']+ random_char['ch'] + random_3['ch'] + random_4['ch'] + random_5['ch'] + mini_random_1['ch'] + mini_random_2['ch']
+    plate_text =  random_1['ch'] + random_2['ch']+ '-' +random_char['ch']+ '-' + random_3['ch'] + random_4['ch'] + random_5['ch']+ '-' + mini_random_1['ch'] + mini_random_2['ch']
 
     char_color = 'black'
     
-    if random_char['ch']=='T':
+    if random_char['ch']=='T' or random_char['ch'] == 'EIN':
         background = Image.open("templates/taxi.png")
     elif random_char['ch']=='P':
         background = Image.open("templates/police.png")
-        char_color = 'black'
+        char_color = 'white'
     else:
         background = Image.open("templates/savari.png")
     new_image = Image.new("RGBA", background.size)
