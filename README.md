@@ -1,4 +1,4 @@
-# Iranina-license-plate-generator
+# Iranian-license-plate-generator
 
 You can use this project to produce quality Iranian license plates.
 
