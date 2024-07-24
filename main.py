@@ -90,10 +90,10 @@ mini_numbers = [
         ]
 
 chars = [
-          {"ch":'P',
-           "position":(260, 30),
-           "size":(110, 110),
-           },
+          # {"ch":'P',
+          #  "position":(260, 30),
+          #  "size":(110, 110),
+          #  },
           {"ch":'EIN',
            "position":(260, 30),
            "size":(110, 110),
@@ -161,7 +161,7 @@ chars = [
     ]
 
 
-for i in range(200):
+for i in range(2000):
     # Open the background image
 
     # Make a random choice from the list
@@ -259,6 +259,6 @@ for i in range(200):
 
 
     # Save the final image with the overlay
-    with open(f"output/output_image_{i}.txt",'w') as f:
-        f.write(plate_text)
-    final_image.save(f"output/output_image_{i}.png")
+    # with open(f"output/output_image_{i}.txt",'w') as f:
+    #     f.write(plate_text)
+    final_image.save(f"output/{i}_{plate_text}.png")
