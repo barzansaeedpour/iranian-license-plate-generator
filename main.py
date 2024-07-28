@@ -58,7 +58,7 @@ def main() -> None:
 			{"ch": mini_random_numbers[1]['ch'], "size": mini_random_numbers[1]['size'], "position": [720, mini_random_numbers[1]['position'][1]]}
 		]
     
-    license_plate_text = ''.join([item['ch'] for item in license_plate_items])
+		license_plate_text = ''.join([item['ch'] for item in license_plate_items])
 
 		background, char_color = get_background(random_char)
 		new_image = Image.new("RGBA", background.size)
