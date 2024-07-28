@@ -9,7 +9,7 @@ taxi_background_path = "templates/taxi.png"
 
 def get_background(char: str) -> Tuple[Image.Image, str]:
 	char_color = 'black'
-	if char['ch']=='T':
+	if char['ch']=='T' or char['ch']=='EIN':
 		background = Image.open(taxi_background_path)
 	elif char['ch']=='P':
 		background = Image.open(police_background_path)
