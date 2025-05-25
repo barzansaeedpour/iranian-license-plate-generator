@@ -40,6 +40,11 @@
     { "ch": "V", "position": [280, 40], "size": [70, 100] },
     { "ch": "M", "position": [280, 40], "size": [70, 100] },
     { "ch": "Y", "position": [270, 40], "size": [90, 100] },
-    { "ch": "L", "position": [275, 35], "size": [70, 110] }
+    { "ch": "L", "position": [275, 35], "size": [70, 110] },
+    { "ch": "Z", "position": [275, 35], "size": [70, 110] },
+    { "ch": "ZH", "position": [265, 35], "size": [110, 110] },
+    { "ch": "TH", "position": [260, 35], "size": [110, 90] },
+    { "ch": "SH", "position": [250, 25], "size": [120, 110] },
+    { "ch": "A", "position": [250, 25], "size": [130, 110] }
   ]
 }

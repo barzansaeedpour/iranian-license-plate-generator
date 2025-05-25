@@ -15,7 +15,7 @@ numbers = data['numbers']
 mini_numbers = data['mini_numbers']
 chars = data['chars']
 
-for i in range(2):
+for i in range(4000):
     # Open the background image
 
     # Make a random choice from the list
@@ -39,9 +39,17 @@ for i in range(2):
     
     if random_char['ch']=='T' or random_char['ch'] == 'EIN':
         background = Image.open("templates/taxi.png")
-    elif random_char['ch']=='P':
+    elif random_char['ch']=='P' or random_char['ch'] == 'TH':
         background = Image.open("templates/police.png")
         char_color = 'white'
+    elif random_char['ch']=='A':
+        background = Image.open("templates/gov.png")
+        char_color = 'white'
+    elif random_char['ch']=='Z':
+        background = Image.open("templates/blue.png")
+        char_color = 'white'
+    elif random_char['ch']=='SH':
+        background = Image.open("templates/artesh.png")
     else:
         background = Image.open("templates/savari.png")
     new_image = Image.new("RGBA", background.size)
