@@ -123,12 +123,27 @@ Each label is encoded as:
 | 1  | 1     | Digit one (عدد یک)|
 | ...| ...   | ... |
 | 9  | 9     | Digit nine (عدد نه) |
-| 10 | A     | Government plate (دولتی)|
-| 11 | P     | Police (پلیس)|
-| 12 | T     | Taxi (تاکسی)|
-| 13 | TH    | Sepah (سپاه)|
-| 14 | Z     | Blue plate (دیپلمات)|
-| 15 | SH    | Military (ارتش)|
-| 16 | EIN   | Public (عمومی)|
+| 10 | EIN   | Public (عمومی) (ع)|
+| 11 | B     | ب |
+| 12 | N     | ن |
+| 13 | T     | Taxi (تاکسی) (ت)|
+| 14 | H     | هـ |
+| 15 | D     | Diplomat (دیپلمات) (د)|
+| 16 | Q     | ق |
+| 17 | J     | ج |
+| 18 | HE    | ح |
+| 19 | SIN   | س |
+| 20 | SAD   | ص |
+| 21 | TA    | ط |
+| 22 | V     | و |
+| 23 | M     | م |
+| 24 | Y     | ی |
+| 25 | L     | ل |
+| 26 | Z     | Blue plate (وزارت دفاع) (ز)|
+| 27 | ZH    | Disabled (معلولین) (علامت ویلچر)|
+| 28 | TH    | Sepah (سپاه) (ث)|
+| 29 | SH    | Military (ارتش)|
+| 30 | A     | Government plate (دولتی)|
+
 
 - در کنار خروجی، راهنمای برچسب ها نیز اتماتیک ایجاد می شود

@@ -16,7 +16,7 @@ def visualize_random_sample(
     with open(config_path) as f:
         cfg = json.load(f)
 
-    classes = [c["ch"] for c in cfg["numbers"] + cfg["mini_numbers"] + cfg["chars"]]
+    classes = [c["ch"] for c in cfg["mini_numbers"] + cfg["chars"]]
 
     img_name = random.choice(os.listdir(img_dir))
     base = os.path.splitext(img_name)[0]
@@ -37,7 +37,7 @@ def visualize_random_sample(
             cv2.rectangle(img, (x, y), (x + bw, y + bh), (0, 255, 0), 2)
             cv2.putText(
                 img,
-                classes[cls],
+                f"{classes[cls]} ({cls})",
                 (x, y - 5),
                 cv2.FONT_HERSHEY_SIMPLEX,
                 0.6,

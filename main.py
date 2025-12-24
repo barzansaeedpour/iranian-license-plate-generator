@@ -249,8 +249,8 @@ def main():
 
     cfg = load_config(args.config)
     numbers, mini_numbers, chars = cfg["numbers"], cfg["mini_numbers"], cfg["chars"]
-    class_names = [c["ch"] for c in numbers + mini_numbers + chars]
-    class_map = {c["ch"]: i for i, c in enumerate(numbers + mini_numbers + chars)}
+    class_names = [c["ch"] for c in mini_numbers + chars]
+    class_map = {c["ch"]: i for i, c in enumerate(mini_numbers + chars)}
 
     generate_yolo_yaml(args.output_dir, class_names)
 
