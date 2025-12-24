@@ -86,7 +86,8 @@ samples of generated images
 - With arguments (با پارامترهای چرخش، تغییر پرسپکتیو، اشباع رنگ و غیره):
 - ```
     python main.py --num-images 100 --motion-blur-prob 0.3 --perspective-max-offset 0.12 --illumination-alpha-max 1.5
-```
+    ```
+
 
 ## Chars and Numbers
 
