@@ -128,7 +128,7 @@ Each label is encoded as:
 | 12 | N     | ن |
 | 13 | T     | Taxi (تاکسی) (ت)|
 | 14 | H     | هـ |
-| 15 | D     | Diplomat (دیپلمات) (د)|
+| 15 | D     | Diplomat (دیپلمات) (D)|
 | 16 | Q     | ق |
 | 17 | J     | ج |
 | 18 | HE    | ح |
@@ -142,8 +142,9 @@ Each label is encoded as:
 | 26 | Z     | Blue plate (وزارت دفاع) (ز)|
 | 27 | ZH    | Disabled (معلولین) (علامت ویلچر)|
 | 28 | TH    | Sepah (سپاه) (ث)|
-| 29 | SH    | Military (ارتش)|
-| 30 | A     | Government plate (دولتی)|
+| 29 | P     | Police (پلیس) (پ)|
+| 30 | SH    | Military (ارتش) (ش)|
+| 31 | A     | Government (دولتی) (الف)|
 
 
 - در کنار خروجی، راهنمای برچسب ها نیز اتماتیک ایجاد می شود
