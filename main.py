@@ -172,7 +172,7 @@ def generate_plate(i, args, numbers, mini_numbers, chars, class_map, img_dir, lb
 
     plate_text = f"{r[0]['ch']}{r[1]['ch']}-{rc['ch']}-{r[2]['ch']}{r[3]['ch']}{r[4]['ch']}-{m1['ch']}{m2['ch']}"
 
-    char_color = "white" if rc["ch"] in ["P", "TH", "A", "Z"] else "black"
+    char_color = "white" if rc["ch"] in ["P", "TH", "DI", "A", "Z"] else "black"
 
     template_map = {
         "T": "taxi.png",

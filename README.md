@@ -128,7 +128,7 @@ Each label is encoded as:
 | 12 | N     | ن |
 | 13 | T     | Taxi (تاکسی) (ت)|
 | 14 | H     | هـ |
-| 15 | D     | Diplomat (دیپلمات) (D)|
+| 15 | D     | د |
 | 16 | Q     | ق |
 | 17 | J     | ج |
 | 18 | HE    | ح |
