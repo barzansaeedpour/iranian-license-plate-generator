@@ -9,7 +9,7 @@ You can use this project to produce quality Iranian license plates.
 
 samples of generated images
 
-نمونه پلاک های تولید شده
+نمونه پلاک های تولید شده بدون پارامتر:
 
 <html>
 <body>
@@ -22,11 +22,59 @@ samples of generated images
             <td><img src="./files/3.png" width="100%" height="100%"></td>
             <td><img src="./files/4.png" width="100%" height="100%"></td>
         </tr>
+        <tr>
+            <td><img src="./files/5.png" width="100%" height="100%"></td>
+            <td><img src="./files/6.png" width="100%" height="100%"></td>
+        </tr>
     </table>
 </body>
 </html>
 
-## How to use
+نمونه پلاک های تولید شده با پارامترهای (چرخش، تغییر پرسپکتیو، اشباع رنگ و غیره):
+
+
+<html>
+<body>
+    <table>
+        <tr>
+            <td><img src="./files/7.png" width="100%" height="100%"></td>
+            <td><img src="./files/8.png" width="100%" height="100%"> </td>
+        </tr>
+        <tr>
+            <td><img src="./files/9.png" width="100%" height="100%"></td>
+            <td><img src="./files/10.png" width="100%" height="100%"></td>
+        </tr>
+        <tr>
+            <td><img src="./files/11.png" width="100%" height="100%"></td>
+            <td><img src="./files/12.png" width="100%" height="100%"></td>
+        </tr>
+    </table>
+</body>
+</html>
+
+نمونه پلاک های تولید شده به همراه برچسب فرمت YOLO:
+
+
+<html>
+<body>
+    <table>
+        <tr>
+            <td><img src="./files/13.png" width="100%" height="100%"></td>
+            <td><img src="./files/14.png" width="100%" height="100%"> </td>
+        </tr>
+        <tr>
+            <td><img src="./files/15.png" width="100%" height="100%"></td>
+            <td><img src="./files/16.png" width="100%" height="100%"></td>
+        </tr>
+        <tr>
+            <td><img src="./files/17.png" width="100%" height="100%"></td>
+            <td><img src="./files/18.png" width="100%" height="100%"></td>
+        </tr>
+    </table>
+</body>
+</html>
+
+## How to use (Python 3.10.0 is recommended)
 
 - ```
     pip install -r requirements.txt
@@ -34,6 +82,11 @@ samples of generated images
 - ```
     python main.py 
     ```
+
+- With arguments (با پارامترهای چرخش، تغییر پرسپکتیو، اشباع رنگ و غیره):
+- ```
+    python main.py --num-images 100 --motion-blur-prob 0.3 --perspective-max-offset 0.12 --illumination-alpha-max 1.5
+```
 
 ## Chars and Numbers
 
@@ -54,3 +107,27 @@ samples of generated images
 | ی | Y | <img src="./resized_chars/Y.png" width="50%" height="50%" style="background-color: white;"> | ه | H | <img src="./resized_chars/H.png" width="50%" height="50%" style="background-color: white;"> |
 
 
+## Label Mapping (راهنمای برچسب ها)
+
+This dataset uses YOLO-format annotations.
+
+Each label is encoded as:
+<class_id> <x_center> <y_center> <width> <height>
+
+### Class IDs
+
+| ID | Label | Description |
+|----|-------|------------|
+| 0  | 0     | Digit zero (عدد صفر) |
+| 1  | 1     | Digit one (عدد یک)|
+| ...| ...   | ... |
+| 9  | 9     | Digit nine (عدد نه) |
+| 10 | A     | Government plate (دولتی)|
+| 11 | P     | Police (پلیس)|
+| 12 | T     | Taxi (تاکسی)|
+| 13 | TH    | Sepah (سپاه)|
+| 14 | Z     | Blue plate (دیپلمات)|
+| 15 | SH    | Military (ارتش)|
+| 16 | EIN   | Public (عمومی)|
+
+- در کنار خروجی، راهنمای برچسب ها نیز اتماتیک ایجاد می شود
