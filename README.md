@@ -82,12 +82,12 @@ samples of generated images
     <table>
         <tr>
             <td><img src="./files/19.png" width="100%" height="100%"></td>
-        </tr>
-        <tr>
             <td><img src="./files/20.png" width="100%" height="100%"></td>
+            <td><img src="./files/21.png" width="100%" height="100%"></td>
         </tr>
         <tr>
-            <td><img src="./files/21.png" width="100%" height="100%"></td>
+        </tr>
+        <tr>
         </tr>
     </table>
 </body>
