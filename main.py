@@ -42,6 +42,9 @@ def parse_args():
     parser.add_argument("--illumination-beta-min", type=int, default=-25)
     parser.add_argument("--illumination-beta-max", type=int, default=25)
 
+    # Motocycle
+    parser.add_argument("--motorcycle", action="store_true")
+
     return parser.parse_args()
 
 
@@ -234,6 +237,62 @@ def generate_plate(i, args, numbers, mini_numbers, chars, class_map, img_dir, lb
             f.write(yolo_line(b, iw, ih) + "\n")
 
 
+def generate_plate_motorcycle(i, args, numbers, class_map, img_dir, lbl_dir):
+    r = [random.choice(numbers) for _ in range(8)]
+
+    plate_text = f"{r[0]['ch']}{r[1]['ch']}{r[2]['ch']}-{r[3]['ch']}{r[4]['ch']}{r[5]['ch']}{r[6]['ch']}{r[7]['ch']}"
+
+    char_color = "black"
+    bg = Image.open(f"templates/motorcycle.png").convert("RGBA")
+    fg = Image.new("RGBA", bg.size)
+    boxes = []
+
+    def paste(ch, size, pos):
+        img = remove_background(Image.open(f"chars/{ch}.png"), char_color)
+        img = img.resize(size)
+        fg.paste(img, pos, img)
+        boxes.append((pos[0], pos[1], size[0], size[1], class_map[ch]))
+
+    paste(r[0]["ch"], r[0]["size"], (205, r[0]["position"][1] + 10))
+    paste(r[1]["ch"], r[1]["size"], (285, r[1]["position"][1] + 10))
+    paste(r[2]["ch"], r[2]["size"], (375, r[2]["position"][1] + 10))
+    paste(r[3]["ch"], r[3]["size"], (40, r[3]["position"][1] + 180))
+    paste(r[4]["ch"], r[4]["size"], (140, r[4]["position"][1] + 180))
+    paste(r[5]["ch"], r[5]["size"], (235, r[5]["position"][1] + 180))
+    paste(r[6]["ch"], r[6]["size"], (330, r[6]["position"][1] + 180))
+    paste(r[7]["ch"], r[7]["size"], (430, r[7]["position"][1] + 180))
+
+    final = Image.alpha_composite(bg, fg)
+    cv_img = cv2.cvtColor(np.array(final), cv2.COLOR_RGBA2BGRA)
+
+    if random.random() < args.perspective_prob:
+        cv_img, boxes = perspective_warp(cv_img, boxes, args.perspective_max_offset)
+
+    if random.random() < args.rotate_prob:
+        cv_img, boxes = rotate_and_shear(
+            cv_img, boxes, args.rotate_max_deg, args.shear_max
+        )
+
+    if random.random() < args.motion_blur_prob:
+        cv_img = motion_blur(cv_img, args.motion_blur_kernels)
+
+    cv_img = illumination(
+        cv_img,
+        args.illumination_alpha_min,
+        args.illumination_alpha_max,
+        args.illumination_beta_min,
+        args.illumination_beta_max,
+    )
+
+    final = Image.fromarray(cv2.cvtColor(cv_img, cv2.COLOR_BGRA2RGBA))
+    iw, ih = final.size
+
+    final.save(f"{img_dir}/{i}_{plate_text}.png")
+    with open(f"{lbl_dir}/{i}_{plate_text}.txt", "w") as f:
+        for b in boxes:
+            f.write(yolo_line(b, iw, ih) + "\n")
+
+
 # ============================================================
 # Main
 # ============================================================
@@ -254,14 +313,23 @@ def main():
 
     generate_yolo_yaml(args.output_dir, class_names)
 
-
-    for i in range(args.num_images):
-        generate_plate(
-            i, args, numbers, mini_numbers, chars,
-            class_map,
-            f"{args.output_dir}/images",
-            f"{args.output_dir}/labels",
-        )
+    
+    if(args.motorcycle):
+        for i in range(args.num_images):
+            generate_plate_motorcycle(
+                i, args, numbers,
+                class_map,
+                f"{args.output_dir}/images",
+                f"{args.output_dir}/labels",
+            )
+    else:
+        for i in range(args.num_images):
+            generate_plate(
+                i, args, numbers, mini_numbers, chars,
+                class_map,
+                f"{args.output_dir}/images",
+                f"{args.output_dir}/labels",
+            )
 
 
 if __name__ == "__main__":
