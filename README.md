@@ -74,6 +74,25 @@ samples of generated images
 </body>
 </html>
 
+نمونه پلاک های تولید شده موتور سیکلت:
+
+
+<html>
+<body>
+    <table>
+        <tr>
+            <td><img src="./files/19.png" width="100%" height="100%"></td>
+        </tr>
+        <tr>
+            <td><img src="./files/20.png" width="100%" height="100%"></td>
+        </tr>
+        <tr>
+            <td><img src="./files/21.png" width="100%" height="100%"></td>
+        </tr>
+    </table>
+</body>
+</html>
+
 ## How to use (Python 3.10.0 is recommended)
 
 - ```
@@ -86,6 +105,11 @@ samples of generated images
 - With arguments (با پارامترهای چرخش، تغییر پرسپکتیو، اشباع رنگ و غیره):
 - ```
     python main.py --num-images 100 --motion-blur-prob 0.3 --perspective-max-offset 0.12 --illumination-alpha-max 1.5
+    ```
+
+- موتورسیکلت:
+- ```
+    python main.py --num-images 100 --motion-blur-prob 0.3 --perspective-max-offset 0.12 --illumination-alpha-max 1.5 --motorcycle
     ```
 
 
