@@ -44,6 +44,9 @@ def parse_args():
 
     # Motocycle
     parser.add_argument("--motorcycle", action="store_true")
+    
+    parser.add_argument("--target-chars", nargs="+", type=str, default=None, 
+                        help="Specify which Persian characters to use (e.g., EIN B T)")
 
     return parser.parse_args()
 
@@ -169,7 +172,16 @@ def illumination(img, amin, amax, bmin, bmax):
 # ============================================================
 def generate_plate(i, args, numbers, mini_numbers, chars, class_map, img_dir, lbl_dir):
     r = [random.choice(numbers) for _ in range(5)]
-    rc = random.choice(chars)
+    if args.target_chars:
+        # Pick a random character
+        chosen_char_str = random.choice(args.target_chars)
+        rc = next((c for c in chars if c["ch"] == chosen_char_str), None)
+        if rc is None:
+            print(f"Error: {chosen_char_str} not found in config.json")
+            return
+    else:
+        # Default behavior: pick from all available characters
+        rc = random.choice(chars)
     m1 = random.choice([m for m in mini_numbers if m["ch"] != "0"])
     m2 = random.choice(mini_numbers)
 
